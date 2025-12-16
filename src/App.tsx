@@ -1,35 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { scenes } from "./story/scenes";
 
+//APpp funksjonen holder styr på hvilken scene som er aktiv for øyeblikket
+//const scene henter riktig scene basert på brukerens valg
 function App() {
-  const [count, setCount] = useState(0)
+  const [sceneId, setSceneId] = useState("start");
+  const scene = scenes[sceneId];
 
   return (
-    <>
+    <main style={{ maxWidth: 600, margin: "0 auto", padding: 24 }}>
+      <p style={{ whiteSpace: "pre-line" }}>{scene.text}</p>
+
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {scene.choices.map((choice) => (
+          <button
+            key={choice.text}
+            onClick={() => setSceneId(choice.next)}
+            style={{ display: "block", marginTop: 12 }}
+          >
+            {choice.text}
+          </button>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </main>
+  );
 }
 
-export default App
+export default App;
