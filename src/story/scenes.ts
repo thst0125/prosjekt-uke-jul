@@ -190,6 +190,8 @@ Bare refleksjonen av deg selv i glasset.
     ],
   },
 
+  //Lokfører blir introdusert
+
   lokforer: {
     id: "lokforer",
     text: `
@@ -260,5 +262,45 @@ Bare refleksjonen av deg selv i glasset.
       { text: "Se deg rundt", next: "vogn" },
       { text: "Bli stående", next: "stillhet" },
     ],
+  },
+
+  slutt_gar_av: {
+    id: "slutt_gar_av",
+    text: `
+    Du åpner døren.
+    
+    Det er mørkt utenfor,
+    men stille på en annen måte enn inne i toget.
+    
+    Du tar et steg ut.
+    
+    Bak deg fortsetter toget.
+    `,
+    choices: [],
+  },
+
+  slutt_blir: {
+    id: "slutt_blir",
+    text: `
+    Du slipper døren.
+    
+    Setter deg igjen.
+    
+    Noen har forlatt setet sitt.
+    Toget beveger seg videre.
+    `,
+    choices: [],
+  },
+
+  slutt_passiv: {
+    id: "slutt_passiv",
+    text: `
+    Du blir stående litt for lenge.
+    
+    Døren lukker seg av seg selv.
+    
+    Toget fortsetter.
+    `,
+    choices: [],
   },
 };
